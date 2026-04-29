@@ -3,8 +3,8 @@ import requests
 
 app = Flask(__name__)
 
-WHATSAPP_TOKEN = "your_token_from_meta"
-PHONE_NUMBER_ID = "your_phone_number_id"
+WHATSAPP_TOKEN = "EAANd56KobBwBRbpt3cJK9yotQdTiHZCPnZBtKKtVKi9UjC0LIJwZBCpxlK7mYXY6AT1nMgWKpZBNtCbMYTW41ZCbc7yuSBHgYGKZA060ivlieTg6qrJNgj6SvUI8DzetIxtYgnBZAuPqNH4ARMERo26HPK2FO3ZB6ysTIKZAiDd1IJd1tfSpp1UBabKfG1MNbUFSGn4nzYv6raHbPAxv1rGeyyv4aIz2fUhlIF6Rbg8RrwIq4okB61K1cgoMw0kgdvD8w6VqEbDZBrzWAdnqbsZCdZBPKDZCg"
+PHONE_NUMBER_ID = "1159201907265696"
 
 @app.route("/webhook", methods=["GET"])
 def verify():
@@ -33,4 +33,6 @@ def receive():
             "text": {"body": reply}
         }
     )
-    return "OK", 200
+    return "OK", 20
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
